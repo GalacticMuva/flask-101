@@ -26,7 +26,12 @@ def init_db():
                 age INTEGER
             );
             """)
+    
     conn.commit()
     cur.close()
     conn.close()
     print("Database initialized successfully.")
+
+# THIS MUST BE AT THE LEFT MARGIN
+if __name__ == "__main__":
+    init_db()
