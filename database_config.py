@@ -17,21 +17,20 @@ def init_db():
     conn = get_connection()
     cur = conn.cursor()
     cur.execute ("""
-            CREATE TABLE IF NOT EXISTS persons 
-            (
+            CREATE TABLE IF NOT EXISTS persons (
                 id SERIAL PRIMARY KEY, 
                 first_name VARCHAR(50), 
                 last_name VARCHAR(50),
                 address VARCHAR(100),
                 age INTEGER
             );
-            """)
+        """)
     
     conn.commit()
     cur.close()
     conn.close()
     print("Database initialized successfully.")
 
-# THIS MUST BE AT THE LEFT MARGIN
+
 if __name__ == "__main__":
     init_db()
